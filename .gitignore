@@ -1,0 +1,40 @@
+# Local environments and credentials
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.netrc
+*.pem
+*.key
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+/build/
+/dist/
+.DS_Store
+
+# Shared local data; retain the empty directory marker
+/data/*
+!/data/.gitkeep
+
+# Model artifacts and local scientific tracking
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+wandb/
+tensorboard/
+events.out.tfevents.*
+
+# Campaign-local regenerable/private payloads
+campaigns/*/results/**/cache/
+campaigns/*/results/**/checkpoints/
+campaigns/*/results/**/local/
+campaigns/*/results/**/raw_data/
+campaigns/*/results/**/*.pid
+campaigns/*/results/**/*.lock
+
+# Keep protocols, console logs, scores, reports, and retrieval manifests trackable.
+# Inspect actual staged content before publication; file names do not establish privacy.
