@@ -42,6 +42,8 @@ The diagram uses [Mermaid](https://docs.github.com/en/get-started/writing-on-git
 
 ## Work in campaigns
 
+The idea of organizing LLM-assisted research into campaigns comes from a talk by my lab mate [Michael Y. Li](https://michaelyli.github.io/). Thanks, Michael, for sharing this approach!
+
 **Question → budget and design → check → run → record → decide.**
 
 Each campaign tests one hypothesis. Keep its protocol, results, reports, and logs together; keep reusable code in `src/`. Preserve failures and negative results. Setup may finish with TODOs; an experiment needs an agreed design and budget.
