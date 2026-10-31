@@ -5,12 +5,11 @@ description: Set up or resume an ML or AI-for-science project through defaults o
 
 # Research setup
 
-Read [start.md](../../../start.md) and existing [PROJECT.md](../../../PROJECT.md); follow the setup flow there. Read [AGENTS.md](../../../AGENTS.md) for standing rules. The guide is the canonical procedure; do not create a second questionnaire.
+Follow [start.md](../../../start.md), using [PROJECT.md](../../../PROJECT.md) for saved progress and [AGENTS.md](../../../AGENTS.md) for rules.
 
-Honor an already selected mode. Otherwise offer defaults or guided setup. Ask one or two related questions in ordinary chat and wait; accept skip, stop, defaults, and later without pressure. Inspect supplied local or remote sources for discoverable facts before asking. Never execute inspected code as a side effect of reading it.
+- Honor an existing mode or offer defaults/guided setup. Ask one or two related questions, then wait. Accept skip, stop, or later.
+- Inspect sources before asking discoverable facts. Save partial answers as confirmed, verified, default, or deferred; never invent missing decisions.
+- Resume from saved progress. Preserve existing work, frozen protocols, and goal history.
+- Offer environment preparation and a bounded first check only as described in start.md. Report the scope actually tested.
 
-Write useful partial progress to the owning documents. Distinguish verified evidence, confirmed decisions, defaults, and deferred questions. Preserve previous answers and work; on resume, read the saved progress instead of starting over. An unresolved goal stays unresolved.
-
-The template contains no installed scientific stack. Optional environment preparation and a bounded starting-code check follow the scope selected by the user. Do not turn onboarding into an experiment or prescribe a fixed hardware/framework configuration. Use the guide's evidence levels when reporting a check.
-
-Finish with what was saved, what is deferred, whether a check ran, and the next useful action. A saved setup may remain unready for experiments. Do not require every topic to be answered before finishing.
+Finish with what was saved, deferred questions, check status, and one next action. Setup can finish without experiment readiness.

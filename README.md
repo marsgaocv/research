@@ -1,60 +1,55 @@
 # research
 
-A Markdown-first starting point for machine learning and AI-for-science projects.
-Keep research goals, experiment decisions, evidence, and compute costs together as the project evolves.
-Start with the basics or let an agent guide you through a short, skippable setup.
+A starter for machine learning and AI-for-science projects.
+Keep goals, experiments, evidence, and compute costs together.
+Begin with defaults or a short guided conversation.
 
-## Start here
+## Start
 
-1. Select **Use this template → Create a new repository** on GitHub, then clone your new repository. Alternatively, copy these files into a new directory and initialize independent Git history.
-2. Open [start.md](start.md), or ask your coding agent:
+1. Select **Use this template** on GitHub and clone your new repository.
+2. Open [start.md](start.md), or ask your agent:
 
    > Read start.md and help me set up this research project.
 
-3. Choose **Use defaults** or **Guide me**. You can skip any question, stop, resume, or change your mind.
+3. Choose **Use defaults** or **Guide me**. Skip anything and return later.
 
-No packages are required to use this template. It contains documents and skills, with empty working directories; packages and research code are selected for each project during setup. Setup can finish while the goal, data, or compute details remain undecided. Running an experiment needs its own concrete protocol and budget.
+No packages are required. The template includes Markdown, four workflow skills, and empty working directories.
 
-## Research workflow
+## Where things live
 
-Establish a goal → investigate prior work and starting code → plan one campaign → validate the setup → run the authorized comparison → record every attempt → update the evidence and next decision.
+```mermaid
+flowchart LR
+    R["research/"] --> S["Setup<br/>start.md · PROJECT.md"]
+    R --> G["Direction<br/>GOAL.md · PLAN.md"]
+    R --> A["Guidance<br/>AGENTS.md · .agents/ · PLOTTING.md"]
+    R --> C["Experiments<br/>campaigns/"]
+    C --> N["campaignN/<br/>campaignN.md · RESULTS.md · RUN_LOG.md<br/>docs/ · results/ · reports/"]
+    R --> E["Evidence<br/>CAMPAIGN.md · BOOKKEEPING.md<br/>FINDINGS.md · LOG.md"]
+    R --> I["Implementation<br/>src/ · scripts/ · tests/<br/>configs/ · data/ · vendor/"]
+```
 
-Use [the campaign guide](campaigns/TEMPLATE.md) to create a campaign manually or with an agent. A campaign has one hypothesis, a budget, and a decision it can change. Failed runs and negative results remain part of the record.
+The diagram uses [Mermaid](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams), rendered directly by GitHub. Campaign 0 is reserved for setup checks.
 
-## Documents
-
-| Document | Purpose |
+| When you need to… | Read or update |
 | --- | --- |
-| [start.md](start.md) | Defaults or guided onboarding, including an optional first check |
-| [PROJECT.md](PROJECT.md) | Environment, resources, harness, skills, and setup progress |
-| [GOAL.md](GOAL.md) | Original research goal and dated changes |
-| [PLAN.md](PLAN.md) | Current roadmap and next bounded decision |
-| [AGENTS.md](AGENTS.md) | Standing research and implementation rules |
-| [CAMPAIGN.md](CAMPAIGN.md) | Campaign index, verdicts, and spend |
-| [BOOKKEEPING.md](BOOKKEEPING.md) | Current understanding and open questions |
-| [FINDINGS.md](FINDINGS.md) | Evidence strong enough to change the plan or support publication |
-| [LOG.md](LOG.md) | Permanent execution and infrastructure records |
-| [PLOTTING.md](PLOTTING.md) | Scientific figure and provenance conventions |
-| [.agents/README.md](.agents/README.md) | Included workflow skills and optional specialist catalog |
+| Set up the project | [start.md](start.md), [PROJECT.md](PROJECT.md) |
+| Define the question and next step | [GOAL.md](GOAL.md), [PLAN.md](PLAN.md) |
+| Plan one experiment | [Campaign guide](campaigns/TEMPLATE.md), [CAMPAIGN.md](CAMPAIGN.md) |
+| Understand the evidence | [BOOKKEEPING.md](BOOKKEEPING.md), [FINDINGS.md](FINDINGS.md) |
+| Trace what ran | [LOG.md](LOG.md), each campaign's RUN_LOG.md |
+| Work with an agent | [AGENTS.md](AGENTS.md), [skills](.agents/README.md) |
+| Make a figure | [PLOTTING.md](PLOTTING.md) |
 
-## Working directories
+## Work in campaigns
 
-| Path | Contents |
-| --- | --- |
-| `src/` | Reusable research implementation, created when needed |
-| `scripts/` | Project-specific commands and thin launchers, created when needed |
-| `tests/` | Correctness checks for the selected implementation |
-| `configs/` | Shared configurations; freeze actual run configs with each attempt |
-| `data/` | Local datasets, ignored by Git; provenance belongs with campaigns |
-| `vendor/` | Optional pinned upstream sources; use local adapters for changes |
-| `campaigns/campaignN/` | Protocol, results, run index, and all campaign artifacts |
+**Question → budget and design → check → run → record → decide.**
 
-## Campaign entry points
+Each campaign tests one hypothesis. Keep its protocol, results, reports, and logs together; keep reusable code in `src/`. Preserve failures and negative results. Setup may finish with TODOs; an experiment needs an agreed design and budget.
 
-| Campaign | Current result | Execution history |
+| Campaign | Results | History |
 | --- | --- | --- |
-| 0 — infrastructure | [RESULTS.md](campaigns/campaign0/RESULTS.md) | [RUN_LOG.md](campaigns/campaign0/RUN_LOG.md) |
+| 0 — setup checks | [RESULTS.md](campaigns/campaign0/RESULTS.md) | [RUN_LOG.md](campaigns/campaign0/RUN_LOG.md) |
 
-W&B plus local TensorBoard is the default experiment-tracking policy; another policy can be explicitly selected during setup. Credentials, raw data, weights, and local tracking payloads stay out of Git. Review the actual staged files before publishing; ignore rules cannot detect every sensitive file.
+Defaults: W&B with local TensorBoard, configurable during setup. Keep credentials, raw data, weights, and tracking payloads out of Git; review staged files before publishing.
 
-Template content is [MIT licensed](LICENSE). Optional tools, datasets, models, and upstream code retain their own licenses.
+[MIT license](LICENSE). Added tools, data, and models retain their own licenses.
